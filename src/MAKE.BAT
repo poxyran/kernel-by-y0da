@@ -1,0 +1,12 @@
+@echo off
+
+SET PROJECTNAME=Kernel
+SET MASMBINPATH=\MASM32\BIN
+
+%MASMBINPATH%\Ml.exe /c /coff /Zp1 %PROJECTNAME%.asm
+%MASMBINPATH%\Link.exe /SUBSYSTEM:WINDOWS %PROJECTNAME%.obj
+
+del *.obj
+
+echo.
+pause
